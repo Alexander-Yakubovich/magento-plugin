@@ -5,6 +5,8 @@ Unlimint Magento 2 plugin allows merchants to make payments and refunds (credit 
 
 Also, for preauthorised payments  the plugin supports cancellation (void) transactions and capturing of the payments.
 
+Unlimint Magento 2 plugin works with accessible Gateway and Payment Page modes.
+
 ### Requirements
 
 Unlimint’s Magento 2 plugin is an open-source and supports: 
@@ -16,6 +18,12 @@ Unlimint’s Magento 2 plugin is an open-source and supports:
 
 - Bank сard (Credit Card)
 - Boleto
+- Pix
+
+### Supported localizations
+
+- Portuguese (PT)
+- Spanish (ES)
 
 ## Installation
 
@@ -52,11 +60,11 @@ The installation process will explain how to install the Magento 2 plugin, detai
 
 * If you don't see **Unlimint** - please reinstall the plugin again
 
-9. The Unlimint Magento 2 plugin was successfully installed.
+9. The Unlimint Magento 2 plugin was successfully installed
 
 ## Unit tests (optional)
 
-For execution unit tests in Magento plugin, run the command in the console:
+For execution unit tests in **Magento** plugin, run the command in the console:
 
  `php ./vendor/phpunit/phpunit/phpunit ./app/code/Cardpay/Core/Test/Unit`
    
@@ -72,7 +80,7 @@ This process explains how to set up and configure the **Magento plugin** to acce
 
 2. Navigate to **Stores** > **Configuration** and under the **Sales** section, click the **Payment Methods**. From here, you can configure the Unlimint payment methods
 
-3. You need to enable payment methods in Magento plugin (Credit Card and Boleto)
+3. You need to enable payment methods in **Magento** plugin (Credit Card and Boleto)
 
 First, access the methods you want to enable via Unlimint support (it's a part of merchant onboarding process - see [here](https://www.unlimint.com/integration/))
 
@@ -93,9 +101,11 @@ First, access the methods you want to enable via Unlimint support (it's a part o
    * Set to **No** for two-phases of payment: the amount will not be captured but only blocked.  
  With **No** option selected payments will be captured automatically in 7 days from the time of creating the preauthorised transaction.
  
- In installment case with **No** option selected installments will be declined automatically in 7 days from the time of creating the preauthorised transaction.
+In installment case with **No** option selected installments will be declined automatically in 7 days from the time of creating the preauthorised transaction. Available types of installments include **Issue finance** and **Merchant finance** options.
+Available amounts of installments include 3,6,9,12,18 for **Issue finance** and 2-12 for **Merchant finance** options.
+
  * **Installment enabled:** - this setting enables installment payments
-   * Set to **Yes** - installment payments are enabled. The number of installments are available for selection in payment form, and it's possible to split payment to 2-12 installments, each installment in a 30 days period.
+   * Set to **Yes** - installment payments are enabled. The number of installments which are available for selection in payment form, and it's possible to split payment into 2-18 installments and each installment in a 30 days period.
    * Set to **No** - installment payments aren't enabled
  * **Checkout position** - this setting value is the position of the payment method for the customer in checkout
  * **Ask CPF** - set to **Yes** if you require **CPF (Brazilian Tax Id)** of your customers during checkout
